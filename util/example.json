@@ -1,0 +1,8 @@
+{
+    "titulo": "Mucha basura",
+    "descripcion": "Un chingo de basura en la calle",
+    "ruta_imagen": "http://localhost:8000/uploads/foto.jpg",
+    "latitud": "19.22",
+    "longitud": "-80.22",
+    "creado_en": "2025-05-12 13:37:45"
+}
