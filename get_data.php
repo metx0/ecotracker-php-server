@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
 $user = $_ENV['DB_USER'];
 $password = $_ENV['DB_PASSWORD'];
 $db = $_ENV['DB_NAME'];
+$server_ip = $_ENV['SERVER_IP'];
 
 try {
     $conn = new mysqli('localhost', $user, $password, $db);
@@ -33,7 +34,7 @@ try {
     }
 
     $reportes = [];
-    $uploads_url = "http://localhost:8000/uploads/";
+    $uploads_url = "http://$server_ip/uploads/";
 
     while ($row = $result->fetch_assoc()) {
         // Construir el objeto reporte con la URL completa de la imagen
