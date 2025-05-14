@@ -26,7 +26,7 @@ $server_ip = $_ENV['SERVER_IP'];
 try {
     $conn = new mysqli('localhost', $user, $password, $db);
 
-    $query = "SELECT titulo, descripcion, nombre_imagen, latitud, longitud, creado_en FROM reportes";
+    $query = "SELECT * FROM reportes";
     $result = $conn->query($query);
 
     if (!$result) {
@@ -40,6 +40,7 @@ try {
         // Construir el objeto reporte con la URL completa de la imagen
 
         $reporte = [
+            "id" => $row['id'],
             "titulo" => $row['titulo'],
             "descripcion" => $row['descripcion'],
             "ruta_imagen" => $uploads_url . $row['nombre_imagen'],
