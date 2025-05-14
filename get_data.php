@@ -52,7 +52,7 @@ try {
     }
 
     echo json_encode([
-        'exito' => true,
+        'success' => true,
         'data' => $reportes
     ]);
 
