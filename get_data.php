@@ -26,7 +26,7 @@ $server_ip = $_ENV['SERVER_IP'];
 try {
     $conn = new mysqli('localhost', $user, $password, $db);
 
-    $query = "SELECT * FROM reportes";
+    $query = "SELECT * FROM reportes ORDER BY id DESC";
     $result = $conn->query($query);
 
     if (!$result) {
@@ -34,7 +34,7 @@ try {
     }
 
     $reportes = [];
-    $uploads_url = "http://$server_ip/uploads/";
+    $uploads_url = "https://$server_ip/uploads/";
 
     while ($row = $result->fetch_assoc()) {
         // Construir el objeto reporte con la URL completa de la imagen
